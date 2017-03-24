@@ -1,7 +1,7 @@
 {
   "port": 3000,
   "mongoose": {
-    "uri": "mongodb://localhost/test",
+    "uri": "mongodb://testdatabasemongo:yL7Asrcnyt3u1zgedWnk5NBcwCWaIDx5uiNhAUnuEtrOHGRLlWx60d12eZSuC8MhIo9lxzaojsKfbkffVK9zrA==@testdatabasemongo.documents.azure.com:10250/?ssl=true",
     "options": {
       "server": {
         "socketOptions": {
