@@ -1,7 +1,7 @@
 var config = require('config');
 var app = require('../app');
 var debug = require('debug')('sever:server');
-var http = require('http');
+var https = require('https');
 
 
 
@@ -9,7 +9,7 @@ var port = normalizePort(process.env.PORT || '3000');
 app.set(config.get('port'));
 
 
-var server = http.createServer(app);
+var server = https.createServer(app);
 
 
 
