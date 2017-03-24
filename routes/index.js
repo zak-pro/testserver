@@ -9,8 +9,8 @@ var db = mongoose.connection;
 
 
 //Загрузка прогресса,Если юзера нет, регистрируем нового
-router.post('/',function(req,res,next) {
-    res.end("Hello");
+router.post('/test',function(req,res,next) {
+    res.json({Hello: "Zalupa"});
 });
 router.post('/api/download/:id', function (req, res, next) {
 
