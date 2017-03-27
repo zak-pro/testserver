@@ -1,7 +1,7 @@
 {
   "port": 3000,
   "mongoose": {
-    "uri": "mongodb://testdatabasemongo:yL7Asrcnyt3u1zgedWnk5NBcwCWaIDx5uiNhAUnuEtrOHGRLlWx60d12eZSuC8MhIo9lxzaojsKfbkffVK9zrA==@testdatabasemongo.documents.azure.com:10250/?ssl=true",
+    "uri": "mongodb://testdatabasemongo:wjPIiHGKP5tB3FFQoYb9Msi7mCCqEMRLcB47evouTy6qEVU5DA8TDKLqCIHigopZAlHFX2k6RD4FpWiAuJJLGg==@testdatabasemongo.documents.azure.com:10250/?ssl=true",
     "options": {
       "server": {
         "socketOptions": {
