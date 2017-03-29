@@ -5,8 +5,8 @@ var http = require('http');
 
 
 
-var port = normalizePort(process.env.PORT || '3000');
-app.set(config.get('port'));
+var port = normalizePort(process.env.PORT || '1337');
+
 
 
 var server = http.createServer(app);
