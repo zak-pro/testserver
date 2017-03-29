@@ -7,6 +7,9 @@ var User = require('models/user').User;
 var db = mongoose.connection;
 
 
+router.get('/', function (req, res, err) {
+    res.end("Zalupa zarabotal");
+});
 
 //Загрузка прогресса,Если юзера нет, регистрируем нового
 router.post('/test',function(req,res,next) {
