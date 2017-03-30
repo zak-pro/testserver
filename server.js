@@ -4,7 +4,7 @@ var app = express();                //define app with express
 var path = require('path');         //define path
 var bodyParser = require('body-parser');
 var async = require('async');
-var User = require('user').User;
+var User = require('user');
 
 /*app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -13,7 +13,7 @@ app.set('port', process.env.PORT || 8080);
 
 app.get('/', function (req, res) {
     res.json({
-        Витек: 'ПИРОРАС!!!',
+        Витек: 'ПИРОРАС!!!'
         /* playerName: 'String',
          level: 'String',
          expirience: 'String',
@@ -29,7 +29,7 @@ app.post('/close', function(req, res){
     })
 })
 
-/*app.post('/api/download/:id', function (req, res) {
+app.post('/api/download/:id', function (req, res) {
 
     var id = req.params.id;
     var userprogress = req.body.userclass;
@@ -73,7 +73,7 @@ app.post('/close', function(req, res){
 
     });
 });
-*/
+
 
 
 
