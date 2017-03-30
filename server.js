@@ -15,7 +15,8 @@ app.get('/', function (req, res) {
     })
 });
 
-app.post('close', function(req, res){
+app.post('/close', function(req, res){
+    console.log("Запрос поступил");
     res.json({
         Витек: 'ПИРОРАС!!!'
     })
