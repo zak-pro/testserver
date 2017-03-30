@@ -13,18 +13,13 @@ var db = mongoose.connection;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-
-
+app.set('port', process.env.PORT || 8080);
 
 app.get('/', function (req, res) {
     res.json({
         Витек: 'ПИРОРАС!!!',
     })
 });
-
-app.set('port', process.env.PORT || 8080);
-
-
 
 app.get('/test',function(req,res,next) {
     res.json({Hello: "Zalupa"});
