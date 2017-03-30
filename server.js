@@ -4,7 +4,7 @@ var app = express();                //define app with express
 var path = require('path');         //define path
 var bodyParser = require('body-parser');
 var async = require('async');
-var User = require('user');
+var User = require('./user.js').User;
 
 
 
@@ -16,7 +16,7 @@ app.set('port', process.env.PORT || 8080);
 
 app.get('/', function (req, res) {
     res.json({
-        Витек: 'ПИРОРАС!!!'
+    Pfkegf: 'ПИРОРАС!!!'
         /* playerName: 'String',
          level: 'String',
          expirience: 'String',
@@ -28,7 +28,7 @@ app.get('/', function (req, res) {
 app.post('/close', function(req, res){
     console.log("Запрос поступил");
     res.json({
-        Витек: 'ПИРОРАС!!!'
+        Залупа: 'ПИРОРАС!!!'
     })
 })
 
