@@ -1,7 +1,12 @@
 var mongoose = require('mongoose');
-var config = require('config');
 mongoose.Promise = global.Promise;
 
-mongoose.connect(config.get('mongoose:uri'), config.get('mongoose:options'));
+mongoose.connect("mongodb://localhost/test", {
+    "server": {
+        "socketOptions": {
+            "keepAlive": 1
+        }
+    }
+});
 
 module.exports = mongoose;

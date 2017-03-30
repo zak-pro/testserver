@@ -1,16 +1,10 @@
-var config = require('config');
 var app = require('../app');
 var debug = require('debug')('sever:server');
 var http = require('http');
 
-
-
-var port = normalizePort(process.env.PORT || '1337');
-
-
+var port = normalizePort(process.env.PORT || '8080');
 
 var server = http.createServer(app);
-
 
 
 server.listen(port, function () {
