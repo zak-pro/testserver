@@ -24,7 +24,41 @@ app.get('/', function (req, res) {
          timeSpan: 'String'*/
     })
 });
+app.post('/close/:id', function (req, res, next) {
 
+    var id = req.params.id;
+    var userprogress = req.body.userclass;
+    console.log("JSON from client " + userprogress + "\n");
+
+    var jsonContent = JSON.parse(userprogress); // Парсинг JSON полученного от клиента
+
+    User.findByIdAndUpdate(id, {$set:{playerName: jsonContent.playerName
+            ,level: jsonContent.level
+            ,expirience: jsonContent.expirience
+            ,mass: jsonContent.mass
+            ,closetime: Date.now()}}
+        ,{new: true}, function (err, user) {
+            if (err) return next(err);
+            console.log("UPDATED");
+        });
+});
+
+app.post('/save/:id', function (req, res, next) {
+    var id = req.params.id;
+    var userprogress = req.body.userclass;
+
+    console.log("JSON from client " + userprogress + "\n");
+
+    var jsonContent = JSON.parse(userprogress); // Парсинг JSON полученного от клиента
+    User.findByIdAndUpdate(id, {$set:{playerName: jsonContent.playerName
+            ,level: jsonContent.level
+            ,expirience: jsonContent.expirience
+            ,mass: jsonContent.mass }}
+        ,{new: true}, function (err, user) {
+            if (err) return next(err);
+            console.log("UPDATED");
+        });
+});
 app.post('/close', function(req, res){
     console.log("Запрос поступил");
     res.json({
