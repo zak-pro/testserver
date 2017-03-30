@@ -15,6 +15,14 @@ app.get('/', function (req, res) {
     })
 });
 
+app.post('close', function(req, res){
+    res.json({
+        Витек: 'ПИРОРАС!!!'
+    })
+})
+
+
+
 app.set('port', process.env.PORT || 8080);
 
 
