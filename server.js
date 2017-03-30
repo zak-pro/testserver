@@ -26,7 +26,7 @@ app.get('/test',function(req,res,next) {
 });
 
 
-app.post('/api/download/:id', function (req, res, next) {
+/*app.post('/api/download/:id', function (req, res, next) {
 
     var id = req.params.id;
     var userprogress = req.body.userclass;
@@ -111,7 +111,7 @@ app.post('/save/:id', function (req, res, next) {
 app.post('/close', function (req, res, next) {
     res.send("Hello");
 });
-
+*/
 var server = app.listen(app.get('port'), function () {
     console.log("Server is running on port: " + app.get('port'));
 });
