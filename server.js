@@ -6,9 +6,10 @@ var bodyParser = require('body-parser');
 var async = require('async');
 var User = require('models/user').User;
 
-app.use(bodyParser.json());
+/*app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-
+*/
+app.set('port', process.env.PORT || 8080);
 
 app.get('/', function (req, res) {
     res.json({
@@ -73,7 +74,7 @@ app.post('/api/download/:id', function (req, res) {
     });
 });
 
-app.set('port', process.env.PORT || 8080);
+
 
 
 var server = app.listen(app.get('port'), function () {
