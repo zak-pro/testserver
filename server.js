@@ -78,7 +78,7 @@ app.post('/api/download/:id', function (req, res, next) {
 
 //Сохранение прогресса при закрытии приложения
 app.post('/close/:id', function (req, res, next) {
-    res.send({asdf: "fdfads"});
+    res.send("lol");
     var id = req.params.id;
     var userprogress = req.body.userclass;
     console.log("JSON from client " + userprogress + "\n");
