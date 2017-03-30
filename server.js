@@ -4,7 +4,7 @@ var app = express();                //define app with express
 var path = require('path');         //define path
 var bodyParser = require('body-parser');
 var async = require('async');
-//var User = require('models/user').User;
+var User = require('user').User;
 
 /*app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
