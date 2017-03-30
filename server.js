@@ -29,7 +29,7 @@ app.post('/close', function(req, res){
     })
 })
 
-app.post('/api/download/:id', function (req, res) {
+/*app.post('/api/download/:id', function (req, res) {
 
     var id = req.params.id;
     var userprogress = req.body.userclass;
@@ -73,7 +73,7 @@ app.post('/api/download/:id', function (req, res) {
 
     });
 });
-
+*/
 
 
 
