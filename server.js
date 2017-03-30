@@ -4,11 +4,14 @@ var app = express();                //define app with express
 var path = require('path');         //define path
 var bodyParser = require('body-parser');
 var async = require('async');
-//var User = require('user');
+//var User = require('user').User;
 
-/*app.use(bodyParser.json());
+
+
+
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-*/
+
 app.set('port', process.env.PORT || 8080);
 
 app.get('/', function (req, res) {
