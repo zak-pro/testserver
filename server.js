@@ -16,7 +16,7 @@ app.set('port', process.env.PORT || 8080);
 
 app.get('/', function (req, res) {
     res.json({
-    Pfkegf: 'ПИРОРАС!!!'
+    Test: 'OK!'
     })
 });
 app.post('/close/:id', function (req, res, next) {
@@ -70,7 +70,7 @@ app.post('/api/download/:id', function (req, res) {
     console.log("JSON from client " + userprogress + "\n");
 
     var jsonContent = JSON.parse(userprogress); // Парсинг JSON полученного от клиента
-    console.log("Имя пользователя: " + id + "\n");
+    console.log("Username: " + id + "\n");
 
     async.waterfall([
         function (callback) {
@@ -78,11 +78,11 @@ app.post('/api/download/:id', function (req, res) {
         },
         function (user, callback) {
             if (user){
-                console.log("ПОЛЬЗОВАТЕЛЬ НАЙДЕН!");
+                console.log("User founded!");
                 callback(null, user);
             }
             else {
-                console.log("ПОЛЬЗОВАТЕЛЬ НЕ НАЙДЕН!");
+                console.log("User not found!");
                 var user = new User({_id: id
                     , playerName: jsonContent.playerName
                     , level: jsonContent.level
