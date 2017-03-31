@@ -41,9 +41,9 @@ app.post('/close/:id', function (req, res, next) {
 app.post('/save/:id', function (req, res, next) {
     var id = req.params.id;
     var userprogress = req.body.userclass;
-
     console.log("JSON from client " + userprogress + "\n");
 
+    res.end();
     //var jsonContent = JSON.parse(userprogress); // Парсинг JSON полученного от клиента
     /*async.waterfall([
         function (callback) {
