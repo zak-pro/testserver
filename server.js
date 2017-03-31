@@ -4,7 +4,7 @@ var app = express();                //define app with express
 var path = require('path');         //define path
 var bodyParser = require('body-parser');
 var async = require('async');
-var User = require('./models/user.js').User;
+var User = require('/models/user.js').User;
 
 
 
