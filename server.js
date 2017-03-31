@@ -5,7 +5,7 @@ var path = require('path');         //define path
 var bodyParser = require('body-parser');
 var async = require('async');
 var User = require('models/user.js').User;
-
+var route = require('route/route.js');
 
 
 
@@ -19,6 +19,7 @@ app.get('/', function (req, res) {
     Test: 'OK!'
     })
 });
+
 app.post('/api/close/:id', function (req, res, next) {
 
     var id = req.params.id;
@@ -108,6 +109,7 @@ app.post('/api/download/:id', function (req, res) {
     });
 });
 
+app.route(route);
 
 var server = app.listen(app.get('port'), function () {
     console.log("Server is running on port: " + app.get('port'));
