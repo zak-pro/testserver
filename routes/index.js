@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var load = require('routers/load.js')
+var load = require('routes/load.js')
 
 router.use(load);
 
