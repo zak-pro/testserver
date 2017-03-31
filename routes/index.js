@@ -1,7 +1,12 @@
 var express = require('express');
 var router = express.Router();
+var mongoose = require('libs/mongoose');
+var async = require('async');
 
-var load = require('routes/load.js')
+var User = require('models/user').User;
+var db = mongoose.connection;
+
+
 
 router.use(function(req, res, next) {
     load();
