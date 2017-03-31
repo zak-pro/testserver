@@ -19,7 +19,7 @@ app.get('/', function (req, res) {
     Test: 'OK!'
     })
 });
-app.post('api/close/:id', function (req, res, next) {
+app.post('/api/close/:id', function (req, res, next) {
 
     var id = req.params.id;
     var userprogress = req.body.userclass;
@@ -37,7 +37,7 @@ app.post('api/close/:id', function (req, res, next) {
         });
 });
 
-app.post('api/save/:id', function (req, res, next) {
+app.post('/api/save/:id', function (req, res, next) {
     var id = req.params.id;
     var userprogress = req.body.userclass;
     console.log("JSON from client " + userprogress + "\n");
