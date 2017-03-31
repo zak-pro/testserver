@@ -1,13 +1,12 @@
 var config = require('config');
-var express = require('express');   //define express
-var app = express();                //define app with express
-var path = require('path');         //define path
-var bodyParser = require('body-parser');
+
+var path = require('path');
 var async = require('async');
 var User = require('models/user.js').User;
 
-
-
+var express = require('express');
+var app = express();
+var bodyParser = require('body-parser');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -19,7 +18,7 @@ app.get('/', function (req, res) {
     Test: 'OK!'
     })
 });
-
+/*
 app.post('/api/close/:id', function (req, res, next) {
 
     var id = req.params.id;
@@ -55,7 +54,7 @@ app.post('/api/save/:id', function (req, res, next) {
             console.log("UPDATED");
         });
 });
-
+*/
 
 app.post('/close', function(req, res){
     console.log("Запрос поступил");
