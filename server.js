@@ -43,45 +43,16 @@ app.post('/save/:id', function (req, res, next) {
     var userprogress = req.body.userclass;
     console.log("JSON from client " + userprogress + "\n");
 
-    res.end();
-    //var jsonContent = JSON.parse(userprogress); // Парсинг JSON полученного от клиента
-    /*async.waterfall([
-        function (callback) {
-            User.findById({_id: id }, callback);
-        },
-        function (user, callback) {
-            if (user){
-                console.log("User founded!");
-                callback(null, user);
-            }
-            else {
-                console.log("User not found!");
-                var user = new User({_id: id
-                    , playerName: jsonContent.playerName
-                    , level: jsonContent.level
-                    , expirience: jsonContent.expirience
-                    , mass: jsonContent.mass
-                });
-                user.save(function (err)
-                {
-                    if (err) return next(err);
-                    console.log("New user was save");
-                    //callback(null, user);
-                });
-            }
-        }
-    ], function (err, user) {
-        if (err) return next(err);
-            console.log("Saved");
-        });*/
-    /*User.findByIdAndUpdate(id, {$set:{playerName: jsonContent.playerName
+    var jsonContent = JSON.parse(userprogress); // Парсинг JSON полученного от клиента
+
+    User.findByIdAndUpdate(id, {$set:{playerName: jsonContent.playerName
             ,level: jsonContent.level
             ,expirience: jsonContent.expirience
             ,mass: jsonContent.mass }}
         ,{new: true}, function (err, user) {
             if (err) return next(err);
             console.log("UPDATED");
-        });*/
+        });
 });
 
 
