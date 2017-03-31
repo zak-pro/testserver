@@ -48,7 +48,8 @@ app.post('/save/:id', function (req, res, next) {
     User.findByIdAndUpdate(id, {$set:{playerName: jsonContent.playerName
             ,level: jsonContent.level
             ,expirience: jsonContent.expirience
-            ,mass: jsonContent.mass }}
+            ,mass: jsonContent.mass
+            ,closetime: 0}}
         ,{new: true}, function (err, user) {
             if (err) return next(err);
             console.log("UPDATED");
