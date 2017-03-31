@@ -47,19 +47,33 @@ app.post('/save/:id', function (req, res, next) {
     var jsonContent = JSON.parse(userprogress); // Парсинг JSON полученного от клиента
     async.waterfall([
         function (callback) {
-            User.findByIdAndUpdate(id, {$set:{
-                     playerName: jsonContent.playerName
-                    ,level: jsonContent.level
-                    ,expirience: jsonContent.expirience
-                    ,mass: jsonContent.mass }}
-                ,{new: true}, function (err, user) {
-                    if (err) return next(err);
-                    console.log("UPDATED");
+            User.findById({_id: id }, callback);
+        },
+        function (user, callback) {
+            if (user){
+                console.log("User founded!");
+                callback(null, user);
+            }
+            else {
+                console.log("User not found!");
+                var user = new User({_id: id
+                    , playerName: jsonContent.playerName
+                    , level: jsonContent.level
+                    , expirience: jsonContent.expirience
+                    , mass: jsonContent.mass
                 });
+                user.save(function (err)
+                {
+                    if (err) return next(err);
+                    console.log("New user was save");
+                    //callback(null, user);
+                });
+            }
         }
-    ], function (err, user){
-        console.log("Progress was save!");
-    });
+    ], function (err, user) {
+        if (err) return next(err);
+            console.log("Saved");
+        });
     /*User.findByIdAndUpdate(id, {$set:{playerName: jsonContent.playerName
             ,level: jsonContent.level
             ,expirience: jsonContent.expirience
