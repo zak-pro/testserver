@@ -6,8 +6,13 @@ var async = require('async');
 var User = require('models/user').User;
 var db = mongoose.connection;
 
+//test
+router.get('/', function (req, res, err, next) {
+    res.send("SERVER WORKING!");
+});
+
 //Load progress or new user registration
-router.post('/api/download/:id', function (req, res) {
+router.post('/api/download/:id', function (req, res, err, next) {
 
     var id = req.params.id;
     var userprogress = req.body.userclass;
@@ -52,7 +57,7 @@ router.post('/api/download/:id', function (req, res) {
     });
 });
 //save user progress
-router.post('/api/save/:id', function (req, res, next) {
+router.post('/api/save/:id', function (req, res, err, next) {
     var id = req.params.id;
     var userprogress = req.body.userclass;
     console.log("JSON from client " + userprogress + "\n");
@@ -69,7 +74,7 @@ router.post('/api/save/:id', function (req, res, next) {
         });
 });
 //save user progress on close application
-router.post('/api/close/:id', function (req, res, next) {
+router.post('/api/close/:id', function (req, res, err, next) {
 
     var id = req.params.id;
     var userprogress = req.body.userclass;
