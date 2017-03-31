@@ -7,6 +7,7 @@ var User = require('models/user.js').User;
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
+var router = require('routes/index.js');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -55,6 +56,8 @@ app.post('/api/save/:id', function (req, res, next) {
         });
 });
 */
+
+app.use(router);
 
 app.post('/close', function(req, res){
     console.log("Запрос поступил");

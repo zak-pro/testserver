@@ -7,6 +7,8 @@ var User = require('models/user').User;
 var db = mongoose.connection;
 
 
+
+
 router.get('/', function (req, res, err) {
     res.writeHead(200, {'Contetnt-Tupe': 'text/plain'});
     res.end("Zalupa zarabotal");
