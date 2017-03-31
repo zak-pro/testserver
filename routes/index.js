@@ -6,13 +6,6 @@ var async = require('async');
 var User = require('models/user').User;
 var db = mongoose.connection;
 
-
-
-router.use(function(req, res, next) {
-    load();
-    next();
-});
-
 //Load progress or new user registration
 router.post('/api/download/:id', function (req, res) {
 
