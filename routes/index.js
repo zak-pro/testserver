@@ -3,7 +3,10 @@ var router = express.Router();
 
 var load = require('routes/load.js')
 
-router.use(load);
+router.use(function(req, res, next) {
+    load();
+    next();
+});
 
 
 router.post('/api/save/:id', function (req, res, next) {
