@@ -19,7 +19,7 @@ app.get('/', function (req, res) {
     Test: 'OK!'
     })
 });
-app.post('/close/:id', function (req, res, next) {
+app.post('api/close/:id', function (req, res, next) {
 
     var id = req.params.id;
     var userprogress = req.body.userclass;
@@ -30,15 +30,14 @@ app.post('/close/:id', function (req, res, next) {
     User.findByIdAndUpdate(id, {$set:{playerName: jsonContent.playerName
             ,level: jsonContent.level
             ,expirience: jsonContent.expirience
-            ,mass: jsonContent.mass
-            ,closetime: Date.now()}}
+            ,mass: jsonContent.mass}}
         ,{new: true}, function (err, user) {
             if (err) return next(err);
             console.log("UPDATED");
         });
 });
 
-app.post('/save/:id', function (req, res, next) {
+app.post('api/save/:id', function (req, res, next) {
     var id = req.params.id;
     var userprogress = req.body.userclass;
     console.log("JSON from client " + userprogress + "\n");
