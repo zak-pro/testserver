@@ -44,8 +44,8 @@ app.post('/save/:id', function (req, res, next) {
 
     console.log("JSON from client " + userprogress + "\n");
 
-    var jsonContent = JSON.parse(userprogress); // Парсинг JSON полученного от клиента
-    async.waterfall([
+    //var jsonContent = JSON.parse(userprogress); // Парсинг JSON полученного от клиента
+    /*async.waterfall([
         function (callback) {
             User.findById({_id: id }, callback);
         },
@@ -73,7 +73,7 @@ app.post('/save/:id', function (req, res, next) {
     ], function (err, user) {
         if (err) return next(err);
             console.log("Saved");
-        });
+        });*/
     /*User.findByIdAndUpdate(id, {$set:{playerName: jsonContent.playerName
             ,level: jsonContent.level
             ,expirience: jsonContent.expirience
