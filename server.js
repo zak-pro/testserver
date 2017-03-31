@@ -1,4 +1,4 @@
-
+var config = require('config');
 var express = require('express');   //define express
 var app = express();                //define app with express
 var path = require('path');         //define path
@@ -12,7 +12,7 @@ var User = require('models/user.js').User;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.set('port', process.env.PORT || 8080);
+app.set('port', process.env.PORT || config.get('port'));
 
 app.get('/', function (req, res) {
     res.json({
