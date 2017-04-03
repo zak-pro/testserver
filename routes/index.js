@@ -12,7 +12,7 @@ router.get('/', function (err, req, res, next) {
 });
 
 //Load progress or new user registration
-router.post('/api/download/:id', function (req, res, next) {
+router.post('/api/download/:id', function (err, req, res, next) {
 
     var id = req.params.id;
     var userprogress = req.body.userclass;
@@ -57,7 +57,7 @@ router.post('/api/download/:id', function (req, res, next) {
     });
 });
 //save user progress
-router.post('/api/save/:id', function (req, res, next) {
+router.post('/api/save/:id', function (err, req, res, next) {
     var id = req.params.id;
     var userprogress = req.body.userclass;
     console.log("JSON from client " + userprogress + "\n");
@@ -74,7 +74,7 @@ router.post('/api/save/:id', function (req, res, next) {
         });
 });
 //save user progress on close application
-router.post('/api/close/:id', function (req, res, next) {
+router.post('/api/close/:id', function (err, req, res, next) {
 
     var id = req.params.id;
     var userprogress = req.body.userclass;
