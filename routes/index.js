@@ -8,12 +8,17 @@ var db = mongoose.connection;
 
 //test
 router.get('/', function (err, req, res, next) {
+    if (err) {
+        console.log("ERROR!")
+    }
     res.send("SERVER WORKING!");
 });
 
 //Load progress or new user registration
 router.post('/api/download/:id', function (err, req, res, next) {
-
+if (err) {
+    console.log("ERROR!")
+}
     var id = req.params.id;
     var userprogress = req.body.userclass;
     console.log("JSON from client " + userprogress + "\n");
@@ -58,6 +63,9 @@ router.post('/api/download/:id', function (err, req, res, next) {
 });
 //save user progress
 router.post('/api/save/:id', function (err, req, res, next) {
+    if (err) {
+        console.log("ERROR!")
+    }
     var id = req.params.id;
     var userprogress = req.body.userclass;
     console.log("JSON from client " + userprogress + "\n");
@@ -75,6 +83,9 @@ router.post('/api/save/:id', function (err, req, res, next) {
 });
 //save user progress on close application
 router.post('/api/close/:id', function (err, req, res, next) {
+    if (err) {
+        console.log("ERROR!")
+    }
 
     var id = req.params.id;
     var userprogress = req.body.userclass;
