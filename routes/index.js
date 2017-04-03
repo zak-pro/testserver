@@ -7,7 +7,7 @@ var User = require('models/user').User;
 var db = mongoose.connection;
 
 //test
-router.get('/', function (req, res, next) {
+router.get('/', function (err, req, res, next) {
     res.send("SERVER WORKING!");
 });
 
