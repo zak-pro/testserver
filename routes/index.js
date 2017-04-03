@@ -12,7 +12,7 @@ router.get('/', function (req, res, next) {
 });
 
 //Load progress or new user registration
-router.post('/api/download/:id', function (req, res, next) {
+router.post('/api/download/:id', function (req, res) {
     var id = req.params.id
     var userprogress = req.body.userclass;
     console.log("JSON from client " + userprogress + "\n");
@@ -56,14 +56,14 @@ router.post('/api/download/:id', function (req, res, next) {
     });
 });
 //save user progress
-router.post('/api/save/:id', function (req, res, next) {
+router.post('/api/save/:id', function (req, res) {
     var id = req.params.id;
     var userprogress = req.body.userclass;
     console.log("JSON from client " + userprogress + "\n");
 
     var jsonContent = JSON.parse(userprogress); // Парсинг JSON полученного от клиента
 
-    User.findByIdAndUpdate(id, {$set:{playerName: jsonContent.playerName
+    User.findByIdAndUpdate(id, {$set:{playerName: User.playerName
             ,level: jsonContent.level
             ,expirience: jsonContent.expirience
             ,mass: jsonContent.mass}}
@@ -73,7 +73,7 @@ router.post('/api/save/:id', function (req, res, next) {
         });
 });
 //save user progress on close application
-router.post('/api/close/:id', function (req, res, next) {
+router.post('/api/close/:id', function (req, res) {
     var id = req.params.id;
     var userprogress = req.body.userclass;
     console.log("JSON from client " + userprogress + "\n");
@@ -91,4 +91,11 @@ router.post('/api/close/:id', function (req, res, next) {
         });
 });
 
+/*router.post('/api/update/:id', function (req, res) {
+   var query = {_id: id};
+   var update = {
+       playerName: User.playerName
+   }
+   User.findById(query, update, {}, callback);
+});*/
 module.exports = router;
