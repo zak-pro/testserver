@@ -6,10 +6,7 @@ var Schema = mongoose.Schema;
 //Схема пользователя, описывающая документ в БД с игровым прогрессом
 
 var schema = new Schema({
-    _id: {
-        type: String,
-        required: true
-    },
+    _id: String,
 
     playerName: String,
 
