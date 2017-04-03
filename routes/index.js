@@ -15,10 +15,8 @@ router.get('/', function (err, req, res, next) {
 });
 
 //Load progress or new user registration
-router.post('/api/download/:id', function (err, req, res, next) {
-if (err) {
-    console.log("ERROR!")
-}
+router.post('/api/download/:id', function (req, res, next) {
+
     var id = req.params.id;
     var userprogress = req.body.userclass;
     console.log("JSON from client " + userprogress + "\n");
