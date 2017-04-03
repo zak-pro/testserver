@@ -21,15 +21,11 @@ app.use(function (err, req, res, next) {
     } else {
         next(err);
     }
-})
+});
 
 // Если же произошла иная ошибка то отдаем 500 Internal Server Error
 app.use(function (err, req, res, next) {
     res.send(500, err);
-});
-
-app.get('/', function (req, res, next) {
-    res.send("SERVER WORKING!");
 });
 
 
