@@ -57,9 +57,6 @@ router.post('/api/download/:id', function (req, res, next) {
 });
 //save user progress
 router.post('/api/save/:id', function (req, res, next) {
-    if (err) {
-        console.log("ERROR!")
-    }
     var id = req.params.id;
     var userprogress = req.body.userclass;
     console.log("JSON from client " + userprogress + "\n");
