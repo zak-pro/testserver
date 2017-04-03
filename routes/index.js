@@ -17,7 +17,7 @@ router.get('/', function (req, res, next) {
 //Load progress or new user registration
 router.post('/api/download/:id', function (req, res, next) {
 
-    try{var id = mongoose.Types.ObjectId(req.params.id)}
+    try{var id = req.params.id}
     catch (e){res.send(400)}
 
     //var id = req.params.id;
