@@ -89,13 +89,11 @@ router.post('/api/close/:id', function (req, res) {
             if (err) return next(err);
             console.log("UPDATED");
         });
+    res.end(200);
 });
 
-/*router.post('/api/update/:id', function (req, res) {
-   var query = {_id: id};
-   var update = {
-       playerName: User.playerName
-   }
-   User.findById(query, update, {}, callback);
-});*/
+router.post('/api/update/:id', function (req, res) {
+    console.log(req.body);
+
+});
 module.exports = router;

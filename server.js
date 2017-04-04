@@ -14,6 +14,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.set('port', process.env.PORT || config.get('port'));
 
 app.use(router);
+
+
 app.use(function (err, req, res, next) {
     console.log(err.name);
     if (err.name == "ValidationError") {
