@@ -89,7 +89,7 @@ router.post('/api/close/:id', function (req, res) {
             if (err) return next(err);
             console.log("UPDATED");
         });
-    res.status(200);
+    res.send(200);
 });
 
 router.post('/api/update/:id', function (req, res) {
