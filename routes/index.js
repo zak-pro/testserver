@@ -58,7 +58,6 @@ router.post('/api/download/:id', function (req, res) {
             var _timeSpan = Date.now() - user.closetime;
             User.findByIdAndUpdate(id, {$set:  {timeSpan: _timeSpan}}, {new: true}, function (err, user) {
                 res.json(user);
-                res.send(200);
                 console.log("UPDATED");
             });
         }
