@@ -39,20 +39,28 @@ router.post('/api/download/:id', function (req, res) {
                 });
                 user.save(function (err)
                 {
-                    if (err) return next(err);
-                    console.log("New user was save");
+                    if (err) {
+                        res.send(500);
+                    }
+                    else {
+                        console.log("New user was save");
+                        res.send(200);
+                    }
                     //callback(null, user);
                 });
             }
         }
     ], function (err, user) {
-        if (err) return next(err);
-        var _timeSpan = Date.now() - user.closetime;
-        User.findByIdAndUpdate(id, {$set:  {timeSpan: _timeSpan}}, {new: true}, function (err, user) {
-            res.json(user);
-            console.log("UPDATED");
-        });
-
+        if (err) {
+            res.send(500);
+        }
+        else {
+            var _timeSpan = Date.now() - user.closetime;
+            User.findByIdAndUpdate(id, {$set:  {timeSpan: _timeSpan}}, {new: true}, function (err, user) {
+                res.json(user);
+                console.log("UPDATED");
+            });
+        }
     });
 });
 //save user progress
@@ -68,10 +76,14 @@ router.post('/api/save/:id', function (req, res) {
             ,expirience: jsonContent.expirience
             ,mass: jsonContent.mass}}
         ,{new: true}, function (err, user) {
-            if (err) return next(err);
-            console.log("UPDATED");
+                if (err) {
+                    res.send(500);
+                }
+                else {
+                    console.log("UPDATED");
+                    res.send(200);
+                }
         });
-    res.send(200);
 });
 //save user progress on close application
 router.post('/api/close/:id', function (req, res) {
@@ -87,10 +99,14 @@ router.post('/api/close/:id', function (req, res) {
             ,mass: jsonContent.mass
             ,closetime: Date.now()}}
         ,{new: true}, function (err, user) {
-            if (err) return next(err);
-            console.log("UPDATED");
+            if (err) {
+                res.send(500);
+            }
+            else {
+                console.log("UPDATED");
+                res.send(200);
+            }
         });
-    res.send(200);
 });
 
 router.post('/api/update/:id', function (req, res) {
