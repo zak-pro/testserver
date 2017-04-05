@@ -77,11 +77,11 @@ router.post('/api/save/:id', function (req, res) {
             ,mass: jsonContent.mass}}
         ,{new: true}, function (err, user) {
                 if (err) {
-                    res.status(500);
+                    res.send(500);
                 }
                 else {
                     console.log("UPDATED");
-                    res.status(200);
+                    res.send(200);
                 }
         });
 });
