@@ -71,6 +71,7 @@ router.post('/api/save/:id', function (req, res) {
             if (err) return next(err);
             console.log("UPDATED");
         });
+    res.send(200);
 });
 //save user progress on close application
 router.post('/api/close/:id', function (req, res) {
