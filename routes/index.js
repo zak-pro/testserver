@@ -9,6 +9,11 @@ var db = mongoose.connection;
 //test
 router.get('/', function (req, res, next) {
     res.send("SERVER WORKING!");
+    console.log(req.method);
+    User.find({}, function(err, users) {
+        res.json(users);
+    });
+
 });
 
 //Load progress or new user registration
@@ -71,7 +76,8 @@ router.post('/api/save/:id', function (req, res) {
 
     var jsonContent = JSON.parse(userprogress); // Парсинг JSON полученного от клиента
 
-    User.findByIdAndUpdate(id, {$set:{playerName: jsonContent.playerName
+    User.findByIdAndUpdate(id, {$set:{
+             playerName: jsonContent.playerName
             ,level: jsonContent.level
             ,expirience: jsonContent.expirience
             ,mass: jsonContent.mass}}
