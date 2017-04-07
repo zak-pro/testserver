@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('libs/mongoose');
 var async = require('async');
-
+mongoose.set('debug', true);
 var User = require('models/user').User;
 var db = mongoose.connection;
 
@@ -15,7 +15,13 @@ router.get('/users', function (req, res) {
         console.log("Users: " + users);
     });
 });
+router.get('/drop', function (req,res) {
+    var db = mongoose.connection.db;
+    db.dropDatabase(function () {
+        console.log("drop+")
+    });
 
+});
 //Load progress or new user registration
 router.post('/api/download/:id', function (req, res) {
     var id = req.params.id
