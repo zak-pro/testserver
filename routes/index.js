@@ -7,11 +7,12 @@ var User = require('models/user').User;
 var db = mongoose.connection;
 
 //test
-router.get('/', function (req, res, next) {
+router.get('/users', function (req, res) {
     res.send("SERVER WORKING!");
     console.log(req.method);
     User.find({}, function(err, users) {
-        res.json(users);
+        console.log("Number of users into DB: " + users.length);
+        console.log("Users: " + users);
     });
 
 });
