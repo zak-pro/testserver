@@ -16,6 +16,8 @@ var schema = new Schema({
 
     mass: Array,
 
+    operatingSystem: String,
+
     timeSpan: String,
 
     closetime:{

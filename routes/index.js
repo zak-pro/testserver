@@ -14,7 +14,6 @@ router.get('/users', function (req, res) {
         console.log("Number of users into DB: " + users.length);
         console.log("Users: " + users);
     });
-
 });
 
 //Load progress or new user registration
@@ -81,7 +80,8 @@ router.post('/api/save/:id', function (req, res) {
              playerName: jsonContent.playerName
             ,level: jsonContent.level
             ,expirience: jsonContent.expirience
-            ,mass: jsonContent.mass}}
+            ,mass: jsonContent.mass
+            ,operatingSystem: jsonContent.operatingSystem}}
         ,{new: true}, function (err, user) {
                 if (err) {
                     res.send(500);
